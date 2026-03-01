@@ -2,9 +2,11 @@
 
 **What if you could place your order directly with Mistral AI Le Chat using the Agentic Commerce Protocol?**
 
-You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp. [How to get access?]()
+Just tell Le Chat what you want — and it orders, negotiates, and pays for you. We implement a secure, OAuth-protected MCP server that enables Mistral AI Le Chat to discover products, execute commerce tools, and complete end-to-end Agentic Commerce transactions through a standardized and trusted protocol.
 
-![Make it available](static/makeitavailable.png)
+You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp. 
+
+![Capabilities of the Ordering Server](static/output-mcp-ordering-functions.png)
 
 We implemented a secure, **OAuth-protected MCP server** that enables **Mistral AI Le Chat** to **discover products**, **execute commerce tools**, and **complete end-to-end Agentic Commerce transactions** through a **standardized** and **trusted protocol**.
 
@@ -17,9 +19,11 @@ Le Chat connects to our OAuth-protected MCP server using **discovery Dynamic Cli
 ### Capabilities
 Secure **product discovery**, **contextual ordering**, **real-time negotiation**, **payment initiation** via CIBA, and persistent user context — enabling end-to-end trusted Agentic Commerce.
 
-Just tell Le Chat what you want — and it orders, negotiates, and pays for you.
+### First - you need to make it available - here 
 
-We implement a secure, OAuth-protected MCP server that enables Mistral AI Le Chat to discover products, execute commerce tools, and complete end-to-end Agentic Commerce transactions through a standardized and trusted protocol.
+<img src="static/makeitavailable.png" width="50" height="50" alt="Make it available"/>
+
+### Second - you need to create an Auth0 account
 
 [![Demo of the tool](static/backchannel.png)](https://youtu.be/2RNwvZ_C-78)
 
@@ -121,5 +125,3 @@ Invoke-RestMethod `
     } `
     -Body '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
 ```
-
-![Capabilities of the Ordering Server](static/output-mcp-ordering-functions.png)
