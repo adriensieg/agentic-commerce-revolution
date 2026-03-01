@@ -1,0 +1,13 @@
+# mistralai/apps/mcpserver/k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcpserver
+  namespace: mistralai
+spec:
+  selector:
+    app: mcpserver
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000

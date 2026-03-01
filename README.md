@@ -2,6 +2,10 @@
 
 **What if you could place your order directly with Mistral AI Le Chat using the Agentic Commerce Protocol?**
 
+You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp. [How to get access?]()
+
+[](https://youtu.be/2RNwvZ_C-78)
+
 We implemented a secure, **OAuth-protected MCP server** that enables **Mistral AI Le Chat** to **discover products**, **execute commerce tools**, and **complete end-to-end Agentic Commerce transactions** through a **standardized** and **trusted protocol**.
 
 ### Commerce Protocol
@@ -27,8 +31,89 @@ agentic-commerce/
     ├── config.py
     ├── token.py
     ├── middleware.py
-    ├── routes.py
-    └── tools.py
+    └── routes.py
 ```
 
 # Capabilities
+
+```
+agentic-commerce/
+├── app.py
+└── mcp_auth/
+    ├── __init__.py
+    ├── data.py
+    ├── filters.py
+    ├── handlers.py
+    ├── models.py
+    ├── server.py
+    └── widgets.py
+```
+
+# How to get access?
+
+### Step 1 - get a token the same way Le Chat does (auth code flow uses same token endpoint)
+Get a fresh token
+```shell
+$body = @{
+    client_id     = "vy8sJbRt4cHMnUBmVkDO66NaBk6XUsgB"
+    client_secret = "Yd9J7Ombl8XAyjcPsfckbby5e3MotI-mQ2WnR2pVJ-fHgVtoltQVE0gQW_F0dIYq"
+    audience      = "https://mistralai.devailab.work/mcp"
+    grant_type    = "client_credentials"
+} | ConvertTo-Json
+
+$response = Invoke-RestMethod `
+    -Uri "https://dev-rcc43qlv8opam0co.us.auth0.com/oauth/token" `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body $body
+
+$token = $response.access_token
+Write-Host "Token starts with: $($token.Substring(0, 20))"
+Write-Host "Segment count: $(($token -split '\.').Count)"
+```
+
+### Step 2 - test it against your server
+
+```shell
+$result = Invoke-RestMethod `
+    -Uri "https://mistralai.devailab.work/debug-token" `
+    -Method POST `
+    -Headers @{ Authorization = "Bearer $token" }
+
+$result | ConvertTo-Json
+```
+
+The output: 
+
+```shell
+{
+    "raw_token_length":  750,
+    "raw_token_head":  "eyJhb...",
+    "raw_token_tail":  "nHmHKGOI857OxBa9DWOg",
+    "segment_count":  3,
+    "header":  {
+                   "alg":  "RS256",
+                   "typ":  "JWT",
+                   "kid":  "9-d79AyjEB4F_0mzAy9wX"
+               },
+    "payload":  {
+                    "iss":  "https://dev-rcc43qlv8opam0co.us.auth0.com/",
+                    "sub":  "xxx@clients",
+                    "aud":  "https://mistralai.devailab.work/mcp",
+                    "iat":  1772384562,
+                    "exp":  1772470962,
+                    "gty":  "client-credentials",
+                    "azp":  "xxx"
+                }
+}
+```
+Invoke-RestMethod `
+    -Uri "https://mistralai.devailab.work/mcp" `
+    -Method POST `
+    -Headers @{
+        Authorization  = "Bearer $token"
+        "Content-Type" = "application/json"
+        "Accept"       = "application/json, text/event-stream"
+    } `
+    -Body '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
+```

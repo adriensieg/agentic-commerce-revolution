@@ -1,0 +1,17 @@
+# Burger MCP Server — dependencies
+# Install with: pip install -r requirements.txt
+
+# MCP protocol implementation
+mcp>=1.0.0
+
+# FastMCP framework (wraps the MCP server with convenience helpers)
+fastmcp>=2.0.0
+
+# ASGI web framework (used by FastMCP's http_app; provides Request/JSONResponse)
+starlette>=0.40.0
+
+# ASGI server (used to serve the app)
+uvicorn>=0.30.0
+
+# Data validation
+pydantic>=2.0.0
