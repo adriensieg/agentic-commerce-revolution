@@ -60,8 +60,8 @@ agentic-commerce/
 Get a fresh token
 ```shell
 $body = @{
-    client_id     = "vy8sJbRt4cHMnUBmVkDO66NaBk6XUsgB"
-    client_secret = "Yd9J7Ombl8XAyjcPsfckbby5e3MotI-mQ2WnR2pVJ-fHgVtoltQVE0gQW_F0dIYq"
+    client_id     = "xxx"
+    client_secret = "xxx"
     audience      = "https://mistralai.devailab.work/mcp"
     grant_type    = "client_credentials"
 } | ConvertTo-Json
