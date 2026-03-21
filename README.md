@@ -13,15 +13,14 @@ What if **buying anything** was as **simple** as **asking**? Why **juggle multip
 How to set it up into your favorite **existing** AI Assistant - such as **ChatGPT**, **Claude** or **Mistral AI**? 
 - Here is the **full tutorial**: https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
 
-The main security question is then how do we enable **AI assistants** (such as *Open AI ChatGPT*, *Mistral AI Le Chat* or *Anthropic Claude*) to execute end‑to‑end actions **on behalf of users** — in **real time** and **transparently** — while **preserving identity**, **consent**, and **trust** across **multiple providers**?
-
-Who **owns the transaction** when ChatGPT (or others) becomes the **interface** and **every app becomes a backend** — and how do we monetize that securely?
-
-This is **not** a **UX convenience story** - it's a **multi-party authorization problem**: connecting these 3 systems into a single seamless user action — "repair my Washing machine" — requires solving an **identity chain** that does not exist out of the box. The chain breaks in 3 specific places:
-
-- Break 1 — **ChatGPT is authenticated** - via DCR and OAuth 2.1 Authorization Code Flow with PKCE - but **the user is not**.
-- Break 2 — Our MCP server has **no standing** with **other 3rd party applications** - such as ServiceNow and 3rd party APIs.
-- Break 3 — A **financial transaction** requires explicit **user confirmation**
+- [The Vision]()
+- [The Core Problems we are solving]()
+    - [Break 1 — ChatGPT is authenticated, but the user is not]()
+    - [Break 2 — Our MCP server cannot act on external APIs without user-specific authorization]()
+    - [Break 3 — Financial transactions require explicit user confirmation]()
+ - [The solution]()
+ - [What has it been developed for this hackaton?]()
+ - [The Limits of Today, The Blueprint for Tomorrow]()
 
 # The Vision
 
@@ -54,6 +53,17 @@ Just tell Le Chat what you want — and it orders, negotiates, and pays for you.
 You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp. 
 
 We implemented a secure, **OAuth-protected MCP server** that enables **Mistral AI Le Chat** to **discover products**, **execute commerce tools**, and **complete end-to-end Agentic Commerce transactions** through a **standardized** and **trusted protocol**.
+
+# The Core Problem We're Solving 
+The main security question is then how do we enable **AI assistants** (such as *Open AI ChatGPT*, *Mistral AI Le Chat* or *Anthropic Claude*) to execute end‑to‑end actions **on behalf of users** — in **real time** and **transparently** — while **preserving identity**, **consent**, and **trust** across **multiple providers**?
+
+Who **owns the transaction** when ChatGPT (or others) becomes the **interface** and **every app becomes a backend** — and how do we monetize that securely?
+
+This is **not** a **UX convenience story** - it's a **multi-party authorization problem**: connecting these 3 systems into a single seamless user action — "repair my Washing machine" — requires solving an **identity chain** that does not exist out of the box. The chain breaks in 3 specific places:
+
+- Break 1 — **ChatGPT is authenticated** - via DCR and OAuth 2.1 Authorization Code Flow with PKCE - but **the user is not**.
+- Break 2 — Our MCP server has **no standing** with **other 3rd party applications** - such as ServiceNow and 3rd party APIs.
+- Break 3 — A **financial transaction** requires explicit **user confirmation**
 
 
 ### Commerce Protocol
