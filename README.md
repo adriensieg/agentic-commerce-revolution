@@ -6,10 +6,24 @@ What if **buying anything** was as **simple** as **asking**? Why **juggle multip
 - 💐 Send **flowers** instantly from your local nearby store inside **Mistral AI Le Chat** - https://youtu.be/671YMGWVHL0
 - 🍔 Order your favorite nearby **burgers** with **Anthropic Claude** - https://www.youtube.com/shorts/Cy-N7jy_BsQ
 
+**No more apps**. All from the AI assistant you already use: **ChatGPT**, **Claude** or **Le Chat**.
+
+**Retailers**: no more **costly kiosks** or **mobile apps** —just **expose** your **menu**, **catalog**, or **products** via an **MCP server** and let AI assistants handle the rest.
+
 #### Try it out here - https://hackaton.devailab.work/mcp
 
 How to set it up into your favorite **existing** AI Assistant - such as **ChatGPT**, **Claude** or **Mistral AI**? 
-- Here is the tutorial: https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
+- Here is the **full tutorial**: https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
+
+The main security question is then how do we enable **AI assistants** (such as *Open AI ChatGPT*, *Mistral AI Le Chat* or *Anthropic Claude*) to execute end‑to‑end actions **on behalf of users** — in **real time** and **transparently** — while **preserving identity**, **consent**, and **trust** across **multiple providers**?
+
+Who **owns the transaction** when ChatGPT (or others) becomes the **interface** and **every app becomes a backend** — and how do we monetize that securely?
+
+This is **not** a **UX convenience story** - it's a **multi-party authorization problem**: connecting these 3 systems into a single seamless user action — "repair my Washing machine" — requires solving an **identity chain** that does not exist out of the box. The chain breaks in 3 specific places:
+
+- Break 1 — **ChatGPT is authenticated** - via DCR and OAuth 2.1 Authorization Code Flow with PKCE - but **the user is not**.
+- Break 2 — Our MCP server has **no standing** with **other 3rd party applications** - such as ServiceNow and 3rd party APIs.
+- Break 3 — A **financial transaction** requires explicit **user confirmation**
 
 ## The Vision
 
@@ -17,9 +31,9 @@ Meet **Agentic Commerce Protocol** — the **end of apps**, **tabs**, and **chec
 
 Tell your favorite AI assistant **what you want**, and **it acts**. It **finds** products, **compares** options, **negotiates** prices, and **completes** the purchase — instantly. **No redirects**. **No forms**. **No friction**.
 
-Powered by a secure, **OAuth-protected MCP server**, our platform turns any AI assistant into a fully autonomous buyer. It can discover products, execute transactions, and handle payments end-to-end through a trusted, standardized protocol.
+Powered by a secure, **OAuth-protected MCP server**, our platform turns any **AI assistant** into a **fully autonomous buyer**. It can **discover products**, **execute transactions**, and **handle payments** end-to-end through a **trusted**, **standardized protocol**.
 
-This isn’t another marketplace. It’s a new interface for commerce.
+This is **NOT** another marketplace. It’s a **new interface for commerce**. 
 
 Why juggle multiple apps like it’s 2015, when your assistant can do it all in one conversation?
 
