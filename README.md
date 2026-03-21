@@ -1,6 +1,6 @@
 # Agentic AI Takes Over Commerce
 
-What if buying anything was as simple as asking? Why juggle multiple apps like it’s 2015, when your assistant can do it all in one conversation?
+What if **buying anything** was **as simple as asking**? Why **juggle multiple apps** like it’s **2015**, when **your favorite assistant** can do it all in **one conversation**?
 
 - 🚗 Book the cheapest Uber or Lyft—right inside **ChatGPT** - https://www.youtube.com/shorts/5ZI7IgvJHV8
 - 💐 Send flowers instantly from your local nearby store inside **Mistral AI Le Chat** - https://youtu.be/671YMGWVHL0
@@ -8,7 +8,7 @@ What if buying anything was as simple as asking? Why juggle multiple apps like i
 
 #### Try it out here - https://hackaton.devailab.work/mcp
 
-How to set ip up into your fa
+How to set it up into your favorite **existing** AI Assistant - such as **ChatGPT**, **Claude** or **Mistral AI**? https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
 
 ## The Vision
 
