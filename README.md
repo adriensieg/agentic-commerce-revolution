@@ -53,15 +53,6 @@ This is **not** a **UX convenience story** - it's a **multi-party authorization 
 - Break 2 — Our MCP server has **no standing** with **other 3rd party applications** - such as ServiceNow and 3rd party APIs.
 - Break 3 — A **financial transaction** requires explicit **user confirmation**
 
-### Commerce Protocol
-We implement an AI agent that enables users to discover products, negotiate, order, and pay within a standardized and seamless commerce flow.
-
-### Secure Server Exposure
-Le Chat connects to our OAuth-protected MCP server using **discovery Dynamic Client Registration (DCR)**, and a **PKCE Authorization Code flow** with **Auth0**. It obtains a **signed JWT access token**, verified via **JWKS** before **granting MCP-based MCP tool execution** with automatic token refresh.
-
-### Capabilities
-Secure **product discovery**, **contextual ordering**, **real-time negotiation**, **payment initiation** via CIBA, and persistent user context — enabling end-to-end trusted Agentic Commerce.
-
 # The Core Problem We're Solving
 
 A user saying "repair my washing machine" inside ChatGPT triggers a **3-party authorization chain**: 
@@ -114,6 +105,17 @@ Low-risk queries like reading estimates or checking availability can often be do
 
 The user must explicitly confirm each transaction, through a separate, auditable, and non-repudiable channel. This confirmation should occur without breaking the conversational flow or requiring the user to leave the interface.
 
+# What has it been developed for this hackaton?
+
+### Commerce Protocol
+We implement an AI agent that enables users to discover products, negotiate, order, and pay within a standardized and seamless commerce flow.
+
+### Secure Server Exposure
+Le Chat connects to our OAuth-protected MCP server using **discovery Dynamic Client Registration (DCR)**, and a **PKCE Authorization Code flow** with **Auth0**. It obtains a **signed JWT access token**, verified via **JWKS** before **granting MCP-based MCP tool execution** with automatic token refresh.
+
+### Capabilities
+Secure **product discovery**, **contextual ordering**, **real-time negotiation**, **payment initiation** via CIBA, and persistent user context — enabling end-to-end trusted Agentic Commerce.
+
 # The Limits of Today, The Blueprint for Tomorrow
 
 #### OpenAI (or any AI assistant) does not expose user identity through the MCP layer.
@@ -133,6 +135,8 @@ In the OpenAI chatgpt SDK integration, **only OAuth 2.1 is used** — **not OIDC
 External 3rd parties API are **not publicly open**. 
 Vendors must **explicitly grant our application access to perform actions on behalf of users**. This is a commercial and legal dependency — not a technical one. Without it, Boundary 2 cannot go to production regardless of how well everything else is built.
 
+### Capabilities
+
 ```
 agentic-commerce/
 ├── app.py
@@ -143,8 +147,6 @@ agentic-commerce/
     ├── middleware.py
     └── routes.py
 ```
-
-# Capabilities
 
 ```
 agentic-commerce/
