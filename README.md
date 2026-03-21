@@ -23,7 +23,7 @@ This is **not** a **UX convenience story** - it's a **multi-party authorization 
 - Break 2 — Our MCP server has **no standing** with **other 3rd party applications** - such as ServiceNow and 3rd party APIs.
 - Break 3 — A **financial transaction** requires explicit **user confirmation**
 
-## The Vision
+# The Vision
 
 Meet **Agentic Commerce Protocol** — the **end of apps**, **tabs**, and **checkout flows**. **Just intent**.
 
@@ -55,7 +55,6 @@ You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp
 
 We implemented a secure, **OAuth-protected MCP server** that enables **Mistral AI Le Chat** to **discover products**, **execute commerce tools**, and **complete end-to-end Agentic Commerce transactions** through a **standardized** and **trusted protocol**.
 
-[![Demo of the tool](static/backchannel.png)](https://youtu.be/2RNwvZ_C-78)
 
 ### Commerce Protocol
 We implement an AI agent that enables users to discover products, negotiate, order, and pay within a standardized and seamless commerce flow.
