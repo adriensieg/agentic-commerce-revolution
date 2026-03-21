@@ -1,4 +1,36 @@
-# Agentic Commerce Protocol
+# Agentic AI Takes Over Commerce
+
+What if buying anything was as simple as asking? Why juggle multiple apps like it’s 2015, when your assistant can do it all in one conversation?
+
+- 🚗 Book the cheapest Uber or Lyft—right inside ChatGPT - https://www.youtube.com/shorts/5ZI7IgvJHV8
+- 💐 Send flowers instantly from your local nearby store inside Mistral AI Le Chat - https://youtu.be/671YMGWVHL0
+- 🍔 Order your favorite nearby burgers with Anthropic Claude - https://www.youtube.com/shorts/Cy-N7jy_BsQ
+
+#### Try it out here - https://hackaton.devailab.work/mcp
+
+How to set ip up into your fa
+
+## The Vision
+
+Meet **Agentic Commerce Protocol** — the **end of apps**, **tabs**, and **checkout flows**. **Just intent**.
+
+Tell your favorite AI assistant **what you want**, and **it acts**. It **finds** products, **compares** options, **negotiates** prices, and **completes** the purchase — instantly. **No redirects**. **No forms**. **No friction**.
+
+Powered by a secure, **OAuth-protected MCP server**, our platform turns any AI assistant into a fully autonomous buyer. It can discover products, execute transactions, and handle payments end-to-end through a trusted, standardized protocol.
+
+This isn’t another marketplace. It’s a new interface for commerce.
+
+Why juggle multiple apps like it’s 2015, when your assistant can do it all in one conversation?
+
+With Agentic Commerce, intent becomes action.
+
+Search becomes obsolete. Browsing becomes optional.
+Transactions become invisible.
+
+We’re not improving e-commerce — we’re replacing it.
+
+Welcome to a world where AI doesn’t just assist.
+It decides, negotiates, and buys for you.
 
 **What if you could place your order directly with Mistral AI Le Chat using the Agentic Commerce Protocol?**
 
