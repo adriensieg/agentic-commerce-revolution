@@ -1,10 +1,10 @@
 # Agentic AI Takes Over Commerce
 
-What if **buying anything** was **as simple as asking**? Why **juggle multiple apps** like it’s **2015**, when **your favorite assistant** can do it all in **one conversation**?
+What if **buying anything** was as **simple** as **asking**? Why **juggle multiple apps** like it’s **2015**, when **your favorite assistant** can do it all in **one conversation**?
 
-- 🚗 Book the cheapest Uber or Lyft—right inside **ChatGPT** - https://www.youtube.com/shorts/5ZI7IgvJHV8
-- 💐 Send flowers instantly from your local nearby store inside **Mistral AI Le Chat** - https://youtu.be/671YMGWVHL0
-- 🍔 Order your favorite nearby burgers with **Anthropic Claude** - https://www.youtube.com/shorts/Cy-N7jy_BsQ
+- 🚗 Book the cheapest Uber or Lyft **ride** right inside **ChatGPT** - https://www.youtube.com/shorts/5ZI7IgvJHV8
+- 💐 Send **flowers** instantly from your local nearby store inside **Mistral AI Le Chat** - https://youtu.be/671YMGWVHL0
+- 🍔 Order your favorite nearby **burgers** with **Anthropic Claude** - https://www.youtube.com/shorts/Cy-N7jy_BsQ
 
 #### Try it out here - https://hackaton.devailab.work/mcp
 
