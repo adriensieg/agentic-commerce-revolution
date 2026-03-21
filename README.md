@@ -8,7 +8,8 @@ What if **buying anything** was as **simple** as **asking**? Why **juggle multip
 
 #### Try it out here - https://hackaton.devailab.work/mcp
 
-How to set it up into your favorite **existing** AI Assistant - such as **ChatGPT**, **Claude** or **Mistral AI**? https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
+How to set it up into your favorite **existing** AI Assistant - such as **ChatGPT**, **Claude** or **Mistral AI**? 
+- Here is the tutorial: https://www.youtube.com/watch?v=qwtwGqpXluE&feature=youtu.be
 
 ## The Vision
 
