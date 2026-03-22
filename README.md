@@ -6,7 +6,7 @@ What if **buying anything** was as **simple** as **asking**? Why **juggle multip
 - 💐 Send **flowers** instantly from your local nearby store inside **Mistral AI Le Chat** - https://youtu.be/671YMGWVHL0
 - 🍔 Order your favorite nearby **burgers** with **Anthropic Claude** - https://www.youtube.com/shorts/Cy-N7jy_BsQ
 
-**No more apps**. All from the AI assistant you already use: **ChatGPT**, **Claude** or **Le Chat**
+**No more apps**. All from the AI assistant you already use: **ChatGPT**, **Claude** or **Le Chat**. This is the **future for small commerce**. Zero hardware. Zero maintenance. Zero friction. **The next generation of ordering won't look like a touch screen**. **It'll look like a text message**.
 
 **McDonald's** has an app. **Burger Kings** has an app. **Wendy's** has an app. **KFC** has an app. **ChatGPT OpenAI has a conversation**. Guess which one wins. *China already knows* — **ask WeChat**. The next time you want a burger, **you won't open an app**. **You'll open a conversation**.
 
@@ -29,19 +29,11 @@ Meet **Agentic Commerce Protocol** — the **end of apps**, **tabs**, and **chec
 
 Tell your favorite AI assistant **what you want**, and **it acts**. It **finds** products, **compares** options, **negotiates** prices, and **completes** the purchase — instantly. **No redirects**. **No forms**. **No friction**.
 
-**Retailers**: no more **costly kiosks** or **mobile apps** —just **expose** your **menu**, **catalog**, or **products** via an **MCP server** and let AI assistants handle the rest.
+**Retailers**: no more **costly kiosks** or **mobile apps** —just **expose** your **menu**, **catalog**, or **products** via an **MCP server** and let AI assistants handle the rest. Small businesses don't need a $10,000 kiosk. They need a phone number and an AI that listens.
 
 **No app to download**.**No screen to tap**. **No line to wait in**.
 
-Just you, a chat window, and your order — placed in plain language, confirmed in seconds.
-
-This is the future for small commerce. Zero hardware. Zero maintenance. Zero friction.
-
-The next generation of ordering won't look like a touch screen. It'll look like a text message.
-
-Small businesses don't need a $10,000 kiosk. They need a phone number and an AI that listens.
-
-The revolution won't be digitized. It'll be conversational.
+Just you, a chat window, and your order — **placed in plain language**, confirmed in seconds.
 
 Powered by a secure, **OAuth-protected MCP server**, our platform turns any **AI assistant** into a **fully autonomous buyer**. It can **discover products**, **execute transactions**, and **handle payments** end-to-end through a **trusted**, **standardized protocol**.
 
