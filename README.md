@@ -147,7 +147,7 @@ Of course. Here is a more visually appealing markdown layout of the file structu
 
 ### Project File Structure
 
-```
+
 | Icon | Name | Description |
 |:---|:---|:---|
 | 📁 | **k8s/** | Kubernetes configuration files. |
@@ -177,6 +177,5 @@ Of course. Here is a more visually appealing markdown layout of the file structu
 | 📄 | `app.py` | Main application entry point. |
 | 📄 | `requirements.txt` | Lists the Python package dependencies. |
 
-```
 
 
