@@ -220,11 +220,6 @@ Of course. Here is a more visually appealing markdown layout of the file structu
 │   ├── execution.py
 │   └── orchestration.py
 │
-├── static/
-│   ├── backchannel.png
-│   ├── makeitavailable.png
-│   └── output-mcp-ordering-functions....
-│
 ├── Dockerfile
 ├── README.md
 ├── app.py
