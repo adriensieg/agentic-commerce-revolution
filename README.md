@@ -143,11 +143,11 @@ Vendors must **explicitly grant our application access to perform actions on beh
 
 ### Capabilities
 
-```
 Of course. Here is a more visually appealing markdown layout of the file structure, using emojis and code formatting to distinguish between folders and files.
 
 ### Project File Structure
 
+```
 | Icon | Name | Description |
 |:---|:---|:---|
 | 📁 | **k8s/** | Kubernetes configuration files. |
