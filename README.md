@@ -141,15 +141,8 @@ In the OpenAI chatgpt SDK integration, **only OAuth 2.1 is used** — **not OIDC
 External 3rd parties API are **not publicly open**. 
 Vendors must **explicitly grant our application access to perform actions on behalf of users**. This is a commercial and legal dependency — not a technical one. Without it, Boundary 2 cannot go to production regardless of how well everything else is built.
 
-### Capabilities
-
-Of course. Here is a more visually appealing markdown layout of the file structure, using emojis and code formatting to distinguish between folders and files.
-
 ### Project File Structure
-
 ```
-## 📁 Project Structure
-
 .
 ├── k8s/
 │   ├── deployment.yaml
