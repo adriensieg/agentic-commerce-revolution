@@ -147,33 +147,89 @@ Of course. Here is a more visually appealing markdown layout of the file structu
 
 ### Project File Structure
 
+```
+## 📁 Project Structure
 
-*   **k8s/**
-    *   `deployment.yaml`
-    *   `service.yaml`
-*   **library_mcp_ordering/**
-    *   `__init__.py`
-    *   `data.py`
-    *   `filters.py`
-    *   `handlers.py`
-    *   `models.py`
-    *   `server.py`
-    *   `widgets.py`
-*   **mcp-auth/**
-    *   `__init__.py`
-    *   `config.py`
-    *   `middleware.py`
-    *   `routes.py`
-    *   `token.py`
-    *   `tools.py`
-*   **static/**
-    *   `backchannel.png`
-    *   `makeitavailable.png`
-    *   `output-mcp-ordering-functions....`
-*   `Dockerfile`
-*   `README.md`
-*   `app.py`
-*   `requirements.txt`
+.
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+│
+├── library_mcp_ordering/
+│   ├── __init__.py
+│   ├── data.py
+│   ├── filters.py
+│   ├── handlers.py
+│   ├── models.py
+│   ├── server.py
+│   └── widgets.py
+│
+├── mcp_auth/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── middleware.py
+│   ├── routes.py
+│   ├── token.py
+│   └── tools.py
+│
+├── payments/
+│   ├── __init__.py
+│   ├── stripe/
+│   │   ├── __init__.py
+│   │   ├── client.py
+│   │   ├── checkout.py
+│   │   ├── webhooks.py
+│   │   └── utils.py
+│   │
+│   ├── ciba/
+│   │   ├── __init__.py
+│   │   ├── client.py
+│   │   ├── auth_flow.py
+│   │   ├── polling.py
+│   │   └── utils.py
+│   │
+│   └── orchestrator.py
+│
+├── notifications/
+│   ├── __init__.py
+│   ├── email/
+│   │   ├── __init__.py
+│   │   ├── client.py
+│   │   ├── service.py
+│   │   └── templates/
+│   │       ├── order_confirmation.html
+│   │       └── receipt.html
+│   │
+│   └── dispatcher.py
+│
+├── token_vault/
+│   ├── __init__.py
+│   ├── storage.py
+│   ├── encryption.py
+│   ├── service.py
+│   └── oauth_clients/
+│       ├── __init__.py
+│       ├── google.py
+│       ├── stripe.py
+│       └── generic.py
+│
+├── agents/
+│   ├── __init__.py
+│   ├── intent_parser.py
+│   ├── negotiation.py
+│   ├── execution.py
+│   └── orchestration.py
+│
+├── static/
+│   ├── backchannel.png
+│   ├── makeitavailable.png
+│   └── output-mcp-ordering-functions....
+│
+├── Dockerfile
+├── README.md
+├── app.py
+└── requirements.txt
+```
 
 
 
