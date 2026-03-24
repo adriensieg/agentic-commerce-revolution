@@ -144,27 +144,39 @@ Vendors must **explicitly grant our application access to perform actions on beh
 ### Capabilities
 
 ```
-agentic-commerce/
-├── app.py
-└── mcp_auth/
-    ├── __init__.py
-    ├── config.py
-    ├── token.py
-    ├── middleware.py
-    └── routes.py
-```
+Of course. Here is a more visually appealing markdown layout of the file structure, using emojis and code formatting to distinguish between folders and files.
 
-```
-agentic-commerce/
-├── app.py
-└── mcp_auth/
-    ├── __init__.py
-    ├── data.py
-    ├── filters.py
-    ├── handlers.py
-    ├── models.py
-    ├── server.py
-    └── widgets.py
+### Project File Structure
+
+| Icon | Name | Description |
+|:---|:---|:---|
+| 📁 | **k8s/** | Kubernetes configuration files. |
+| | 📄 `deployment.yaml` | Defines the application deployment. |
+| | 📄 `service.yaml` | Exposes the application as a network service. |
+| 📁 | **library_mcp_ordering/** | Core library for MCP ordering logic. |
+| | 📄 `__init__.py` | Marks the directory as a Python package. |
+| | 📄 `data.py` | Data handling and processing. |
+| | 📄 `filters.py` | Contains data filtering functions. |
+| | 📄 `handlers.py` | Request handlers for the application. |
+| | 📄 `models.py` | Data models and schemas. |
+| | 📄 `server.py` | Main server logic. |
+| | 📄 `widgets.py` | UI widget components. |
+| 📁 | **mcp-auth/** | Authentication service for MCP. |
+| | 📄 `__init__.py` | Marks the directory as a Python package. |
+| | 📄 `config.py` | Configuration settings for authentication. |
+| | 📄 `middleware.py` | Middleware for handling requests. |
+| | 📄 `routes.py` | API routes for authentication. |
+| | 📄 `token.py` | Token generation and validation logic. |
+| | 📄 `tools.py` | Utility functions for authentication. |
+| 📁 | **static/** | Static assets like images. |
+| | 📄 `backchannel.png` | Image asset. |
+| | 📄 `makeitavailable.png` | Image asset. |
+| | 📄 `output-mcp-ordering-functions....` | Image asset. |
+| 📄 | `Dockerfile` | Instructions to build the Docker image. |
+| 📄 | `README.md` | Project documentation. |
+| 📄 | `app.py` | Main application entry point. |
+| 📄 | `requirements.txt` | Lists the Python package dependencies. |
+
 ```
 
 
