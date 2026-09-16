@@ -1,5 +1,6 @@
+# How a Card Payment Moves Through React, Python, and Stripe
 
-Payment Flow — Step-by-Step Explanation
+Server-Side PaymentIntent, Client-Side Card Collection, Webhook-Verified Fulfillment
 
 ```mermaid
 sequenceDiagram
