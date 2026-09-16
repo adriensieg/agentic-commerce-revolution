@@ -1,6 +1,25 @@
 
 Payment Flow — Step-by-Step Explanation
 
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant React (Frontend)
+    participant Python (Backend)
+    participant Stripe
+
+    autonumber
+    Customer->>React (Frontend): Click Checkout
+    React (Frontend)->>Python (Backend): Send cart_id
+    Python (Backend)->>Stripe: Create PaymentIntent (sk_live_...)
+    Stripe-->>React (Frontend): client_secret
+    Customer->>Stripe: Enter card in Stripe iframe (pk_live_...)
+    React (Frontend)->>Stripe: confirmCardPayment(client_secret)
+    Stripe-->>React (Frontend): succeeded (UI only)
+    Stripe->>Python (Backend): Webhook (verify with whsec_...)
+    Python (Backend)->>Python (Backend): Mark PAID -> deliver goods
+```
+
 ### Step 0 — Merchant Onboarding & Key Registration
 - The merchant registers with Stripe once.
 - Stripe creates a **merchant account** (where funds will be held) and issues the **three keys**.
