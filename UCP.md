@@ -20,6 +20,14 @@ sequenceDiagram
     Python (Backend)->>Python (Backend): Mark PAID -> deliver goods
 ```
 
+- Create **<mark>PaymentIntent</mark>** (`sk_live_...`): Our backend tells Stripe "I want to collect $20 from a customer — set up a payment slot for it." A `PaymentIntent` is Stripe's record of one attempted payment: the amount, the currency, and its status (pending → succeeded). Our backend creates it before the customer pays so the amount is **locked server-side** and can't be tampered with. The `sk_live_...` is **our backend's password to Stripe**. It **proves the request** is really from you.
+
+- The **<mark>client_secret</mark>**: When Stripe creates the `PaymentIntent`, it returns a `client_secret` — a one-time password tied to that specific $20 payment. Think of it as a **claim ticket**. Our backend can't safely hand the browser the secret key (that would give the browser full account power). So instead Stripe issues a **narrow**, **single-use ticket** that says: "the holder of this ticket is allowed to complete this one $20 payment — and nothing else." The browser needs some permission to finish the payment. The client_secret is exactly that permission, **scoped to one transaction**.
+
+- **<mark>Stripe iframe (pk_live_...)</mark>**: The `pk_live_...` (**publishable key**) just tells Stripe **which merchant account the card fields belong to**. It's public and powerless on its own — it can't move money. The key is only there so Stripe knows it's your account.
+
+- "confirmCardPayment(client_secret)". This is the moment the browser says to Stripe: "here's the ticket for the $20 payment — go charge the card I just collected." It hands back the client_secret (the ticket) so Stripe can match the card the customer typed to the exact $20 payment your backend set up earlier. Stripe then contacts the banks and charges it. Plain version: "Browser tells Stripe: use this ticket, charge the card now."
+
 ### Step 0 — Merchant Onboarding & Key Registration
 - The merchant registers with Stripe once.
 - Stripe creates a **merchant account** (where funds will be held) and issues the **three keys**.
