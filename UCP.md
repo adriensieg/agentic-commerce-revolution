@@ -3,6 +3,7 @@
 Server-Side PaymentIntent, Client-Side Card Collection, Webhook-Verified Fulfillment
 
 ```mermaid
+%%{init: { 'theme': 'default', 'config': { 'wrap': true }}}%%
 sequenceDiagram
     actor Customer
     participant React (Frontend)
