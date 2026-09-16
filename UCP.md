@@ -8,9 +8,9 @@ Payment Flow — Step-by-Step Explanation
 - The **publishable key** is compiled into the frontend.
 - The merchant also registers the **URL** where **Stripe should later send webhooks**.
 
-    - **Publishable Key** (`pk_live_`...) — **Public identifier**. **Lives in the browser**. Tells Stripe "which merchant account this frontend belongs to." Can only create tokens and mount UI. Useless to an attacker because it cannot move money or read data.
-    - **Secret Key** (`sk_live_`...) — **Private credential**. Lives only on the backend. Proves to Stripe that a server request genuinely comes from the account owner. Authorizes money-moving actions (charge, capture, refund). If leaked, an attacker controls the account.
-    - **Webhook Secret** (`whsec_`...) — **Shared signing key**. Lives only on the backend. Used to verify that an incoming webhook was actually sent by Stripe and not forged. It does not encrypt; it authenticates the message origin. The browser gets a key that can only identify; the server gets keys that can authorize and verify.
+    - **<mark>Publishable Key</mark>** (`pk_live_`...) — **Public identifier**. **Lives in the browser**. Tells Stripe "which merchant account this frontend belongs to." Can only create tokens and mount UI. Useless to an attacker because it cannot move money or read data.
+    - **<mark>Secret Key</mark>** (`sk_live_`...) — **Private credential**. Lives only on the backend. Proves to Stripe that a server request genuinely comes from the account owner. Authorizes money-moving actions (charge, capture, refund). If leaked, an attacker controls the account.
+    - **<mark>Webhook Secret</mark>** (`whsec_`...) — **Shared signing key**. Lives only on the backend. Used to verify that an incoming webhook was actually sent by Stripe and not forged. It does not encrypt; it authenticates the message origin. The browser gets a key that can only identify; the server gets keys that can authorize and verify.
 
 ### Step 1 — Checkout Initialization
 
