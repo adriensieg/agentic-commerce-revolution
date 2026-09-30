@@ -1,5 +1,15 @@
 
 
+How credit cards are secured in Google Pay and how Stripe processes that token without anyone seeing the raw card details
+
+### Step 1: How a Card Gets into Google Pay (Network Tokenization)
+
+When a user adds a credit card to Google Pay, the **raw card number** (**PAN - Primary Account Number**) is destroyed almost immediately and replaced using a process called <mark>**Network Tokenization**</mark>.
+
+- <mark>**The Handshake**</mark>: The user types their **16-digit card number (PAN)** into the Google Pay app. Google Pay securely transmits this data directly to the **Card Network** (Visa, Mastercard, Amex).
+- <mark>**The Substitution**</mark>: The **Card Network** asks the **Issuing Bank** (the bank that gave the user the card) for a **substitute number**. This substitute is called a **DPAN (Digital Primary Account Number)** or a <mark>**Network Token**</mark>.
+- <mark>**The Storage**</mark>: The raw card number is discarded by Google. Only the **DPAN** is stored securely in Google's encrypted servers. This DPAN is entirely useless outside of the Google Pay ecosystem; if a hacker steals it, they cannot use it to buy things on Amazon or swipe it at a physical grocery store.
+
 ```mermaid
 sequenceDiagram
     autonumber
