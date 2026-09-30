@@ -1,5 +1,20 @@
 # End-to-End Secure Tokenization Architecture: From Google Wallet Provisioning to Stripe PSP Checkout
 
+- [Core Pillars: Who Does What?](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#core-pillars-who-does-what)
+
+- [Requirements for Integration](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#requirements-for-integration)
+
+- [The Step-by-Step Flow](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#the-step-by-step-flow)
+  - [Phase 1: Merchant Onboarding (Behind the Scenes)](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#phase-1-merchant-onboarding-behind-the-scenes)
+  - [Phase 2: The User Experience (Frontend & AI Logic)](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#phase-2-the-user-experience-frontend--ai-logic)
+
+- [How credit cards are secured in Google Pay and how Stripe processes that token without anyone seeing the raw card details
+](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#how-credit-cards-are-secured-in-google-pay-and-how-stripe-processes-that-token-without-anyone-seeing-the-raw-card-details)
+  - [Step 1: How a Card Gets into Google Pay (Network Tokenization)](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#step-1-how-a-card-gets-into-google-pay-network-tokenization)
+  - [Part 2: How Stripe Recognizes the Google Pay Token](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#part-2-how-stripe-recognizes-the-google-pay-token)
+  
+- [Webhook Exists: Between Stripe and the Merchant UCP Backend](https://github.com/adriensieg/agentic-commerce-revolution/blob/master/UCP.md#webhook-exists-between-stripe-and-the-merchant-ucp-backend)
+
 #### Core Pillars: Who Does What?
 
 - <mark>**AI Chatbot Platform**</mark>: The orchestrator. It **talks to the user**, **connects to merchants** via MCP, **manages the shopping cart**, and **displays the Google Pay button**.
