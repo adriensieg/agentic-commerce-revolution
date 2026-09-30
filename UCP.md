@@ -1,5 +1,4 @@
-
-
+# End-to-End Secure Tokenization Architecture: From Google Wallet Provisioning to Stripe PSP Checkout
 
 #### Core Pillars: Who Does What?
 
@@ -37,18 +36,18 @@ This is what happens live inside our web application.
     - **AI Chatbot Perspective**: The AI uses the merchant's UCP endpoints to initiate a checkout session. The merchant's backend responds with the exact total, item details, and available shipping methods.
 
 - **Step 7**: <mark>**The Checkout & Payment Trigger**</mark>
-    - **User Perspective**: The user sees a summary of the order and clicks a "Google Pay" button embedded in your chatbot UI.
-    - **AI Chatbot Perspective**: Your web app triggers the standard Google Pay API JavaScript SDK. A secure Google pop-up appears over your chatbot.
+    - **User Perspective**: The user sees a summary of the order and clicks a "Google Pay" button embedded in our chatbot UI.
+    - **AI Chatbot Perspective**: Our web app triggers the standard Google Pay API JavaScript SDK. A secure Google pop-up appears over our chatbot.
       
 - **Step 8**: <mark>**Tokenization**</mark> (Skipping PCI Compliance)
     - **User Perspective**: The user authenticates with biometric data (like FaceID/Fingerprint) or chooses a saved card, and confirms the payment.
-    - **AI Chatbot Perspective**: Google Pay does not give your chatbot or the merchant the actual credit card number. Instead, Google returns a heavily encrypted, one-time-use Payment Token. Because your code never touches raw credit card numbers, you are completely free from PCI DSS compliance stress.
+    - **AI Chatbot Perspective**: Google Pay does not give our chatbot or the merchant the actual credit card number. Instead, Google returns a **heavily encrypted**, **one-time-use Payment Token**. Because our code never touches raw credit card numbers, we are completely free from PCI DSS compliance stress.
       
-- **Step 9**: <mark>**Processing the Money (The PSP's Job)
-    - **AI Chatbot Perspective**: Your chatbot captures this Google Pay encrypted token and passes it securely to the merchant's backend via the UCP "complete session" endpoint.
+- **Step 9**: <mark>**Processing the Money**</mark> (The PSP's Job)
+    - **AI Chatbot Perspective**: Our chatbot captures this Google Pay **encrypted token** and passes it securely to the merchant's backend via the UCP "complete session" endpoint.
     - **Merchant Perspective**: The merchant's backend takes that token and hands it over to their PSP (Stripe). Stripe decrypts the token, talks to the customer's bank, pulls the money, deposits it into the merchant's bank account, and sends back a success confirmation.
       
-- **Step 10**: <mark>**Order Confirmation
+- **Step 10**: <mark>**Order Confirmation**</mark>
     - **AI Chatbot Perspective**: Upon receiving the success signal from the merchant, the AI tells the user: "Success! Your order #12345 has been placed, and a confirmation email is on the way."
 
 ```mermaid
@@ -104,11 +103,7 @@ sequenceDiagram
     BotUI-->>User: Displays message: "Success! Order #12345 has been placed."
 ```
 
-
-
-
-
-How credit cards are secured in Google Pay and how Stripe processes that token without anyone seeing the raw card details
+### How credit cards are secured in Google Pay and how Stripe processes that token without anyone seeing the raw card details
 
 ### Step 1: How a Card Gets into Google Pay (Network Tokenization)
 
