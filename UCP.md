@@ -1,5 +1,20 @@
 
 
+
+#### Core Pillars: Who Does What?
+
+- <mark>**AI Chatbot Platform**</mark>: The orchestrator. It **talks to the user**, **connects to merchants** via MCP, **manages the shopping cart**, and **displays the Google Pay button**.
+- <mark>**The Merchants**</mark>: Independent sellers who expose their catalogs and **checkout systems** using MCP and the UCP (Universal Commerce Protocol) standard.
+- <mark>**The Payment Infrastructure**</mark> (**Google Pay** + **PSP**): Google Pay securely hands over the **user's encrypted card token** to our chatbot, and our chatbot sends it to the **PSP** (like Stripe) to **capture the actual money**.
+
+#### Requirements for Integration
+- <mark>**Google Pay & Wallet Console Account**</mark>: We must create or reuse **a merchant account** in the **Google Pay & Wallet Console**.
+- <mark>**Payment Service Provider (PSP)**</mark>: Use a **PSP integrated with Google Pay**, or set up a direct integration requiring PCI DSS compliance and encryption configuration.
+- <mark>**UCP Well-Known Profile**</mark>: Publish a **UCP profile** declaring **your endpoints**, **public keys**, and the **Google Pay payment handler** (`com.google.pay`).
+- <mark>**REST Endpoints**</mark>: Implement core backend **REST endpoints** for **session creation**, **updates**, and **completion to manage checkout sessions** with AI agents.
+
+<mark>**Google Pay Wallet**</mark> **does not process money**, so we must use a **</mark>Payment Service Provider (PSP)**</mark> like Stripe. Google Pay is a secure digital wallet that stores tokens of real credit cards; a PSP is the actual financial engine that communicates with banks to securely move money from the buyer's card to the merchant's bank account. Since Stripe is a PSP that handles all heavy encryption, using them ensures you do not have to manage PCI DSS compliance.
+
 ```mermaid
 sequenceDiagram
     autonumber
@@ -52,8 +67,6 @@ sequenceDiagram
     Gemini-->>BotUI: Formulate friendly success message
     BotUI-->>User: Displays message: "Success! Order #12345 has been placed."
 ```
-
-
 
 
 
