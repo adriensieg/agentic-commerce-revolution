@@ -13,7 +13,43 @@
 - <mark>**UCP Well-Known Profile**</mark>: Publish a **UCP profile** declaring **your endpoints**, **public keys**, and the **Google Pay payment handler** (`com.google.pay`).
 - <mark>**REST Endpoints**</mark>: Implement core backend **REST endpoints** for **session creation**, **updates**, and **completion to manage checkout sessions** with AI agents.
 
-<mark>**Google Pay Wallet**</mark> **does not process money**, so we must use a **</mark>Payment Service Provider (PSP)**</mark> like Stripe. Google Pay is a secure digital wallet that stores tokens of real credit cards; a PSP is the actual financial engine that communicates with banks to securely move money from the buyer's card to the merchant's bank account. Since Stripe is a PSP that handles all heavy encryption, using them ensures you do not have to manage PCI DSS compliance.
+<mark>**Google Pay Wallet**</mark> **does not process money**, so we must use a **</mark>Payment Service Provider**</mark> (PSP) like **Stripe**. 
+- **Google Pay** is a secure **digital wallet** that **stores tokens of real credit cards**;
+- A **PSP** is the actual **financial engine** that communicates with **banks** to securely move money from **the buyer's card to the merchant's bank account**. Since Stripe is a PSP that handles all heavy encryption, using them ensures you do not have to manage PCI DSS compliance.
+
+### The Step-by-Step Flow
+
+##### Phase 1: Merchant Onboarding (Behind the Scenes)
+Before any user types a message, merchants must list their products in your chatbot.
+- **Step 1**: The merchant builds an MCP Server that exposes their product catalog and inventory.
+- **Step 2**: The merchant configures their system to adhere to UCP endpoints (Standardized APIs for creating a cart, calculating shipping/taxes, and submitting an order).
+- **Step 3**: The merchant registers their UCP-compliant endpoints with your chatbot platform.
+- **Step 4**: The merchant connects their own PSP account (e.g., Stripe) to their system so they can eventually receive payouts.
+
+##### Phase 2: The User Experience (Frontend & AI Logic)
+This is what happens live inside our web application.
+
+- **Step 5**: Search & Browse
+  - **User Perspective**: The user types: "I need a waterproof running jacket size M under $100."
+  - **AI Chatbot Perspective**: The AI recognizes the intent, calls the connected merchant MCP servers, searches their catalogs, and displays 3 matching options directly in the chat UI.
+- **Step 6**: Cart Creation
+    - **User Perspective**: The user clicks "Add to cart" or tells the bot "Let's buy the blue one."
+    - **AI Chatbot Perspective**: The AI uses the merchant's UCP endpoints to initiate a checkout session. The merchant's backend responds with the exact total, item details, and available shipping methods.
+
+- **Step 7**: <mark>**The Checkout & Payment Trigger**</mark>
+    - **User Perspective**: The user sees a summary of the order and clicks a "Google Pay" button embedded in your chatbot UI.
+    - **AI Chatbot Perspective**: Your web app triggers the standard Google Pay API JavaScript SDK. A secure Google pop-up appears over your chatbot.
+      
+- **Step 8**: <mark>**Tokenization**</mark> (Skipping PCI Compliance)
+    - **User Perspective**: The user authenticates with biometric data (like FaceID/Fingerprint) or chooses a saved card, and confirms the payment.
+    - **AI Chatbot Perspective**: Google Pay does not give your chatbot or the merchant the actual credit card number. Instead, Google returns a heavily encrypted, one-time-use Payment Token. Because your code never touches raw credit card numbers, you are completely free from PCI DSS compliance stress.
+      
+- **Step 9**: <mark>**Processing the Money (The PSP's Job)
+    - **AI Chatbot Perspective**: Your chatbot captures this Google Pay encrypted token and passes it securely to the merchant's backend via the UCP "complete session" endpoint.
+    - **Merchant Perspective**: The merchant's backend takes that token and hands it over to their PSP (Stripe). Stripe decrypts the token, talks to the customer's bank, pulls the money, deposits it into the merchant's bank account, and sends back a success confirmation.
+      
+- **Step 10**: <mark>**Order Confirmation
+    - **AI Chatbot Perspective**: Upon receiving the success signal from the merchant, the AI tells the user: "Success! Your order #12345 has been placed, and a confirmation email is on the way."
 
 ```mermaid
 sequenceDiagram
