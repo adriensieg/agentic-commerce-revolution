@@ -167,16 +167,25 @@ sequenceDiagram
 
 ### Webhook Exists: Between Stripe and the Merchant UCP Backend
 
-```mermaid
-sequence diagram
-    autonumber
-    participant MerchUCP as Merchant UCP Backend
-    participant Stripe as PSP (Stripe)
+A **Stripe Webhook** is critically necessary to notify the Merchant's UCP Server about **asynchronous events** that happen after the token is submitted.
 
-    Note over MerchUCP, Stripe: Asynchronous Event Notification via Webhook
-    Stripe->>Stripe: Finalizes settlement or processes a dispute/refund
-    Stripe->>MerchUCP: HTTP POST Webhook: payment_intent.succeeded / charge.refunded
+- **Asynchronous Payment Confirmation**: Some payment types or multi-factor authentication steps vtake time to clear**. Stripe uses a **webhook** (`payment_intent.succeeded`) to tell the merchant when the **money has officially settled**.
+- **Post-Purchase Operations**: If a user requests a **refund** or **initiates a chargeback days later via Stripe**, Stripe fires a **webhook** (`charge.refunded` or `charge.dispute.created`) directly to the **Merchant UCP Backend** so they can automatically update their inventory, CRM, or shipping fulfillment systems.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant MerchUCP as "Merchant UCP Backend"
+    participant Stripe as "PSP (Stripe)"
+
+    Note over MerchUCP,Stripe: Asynchronous Event Notification via Webhook
+    Stripe->>Stripe: Finalizes settlement or processes a dispute or refund
+    Stripe->>MerchUCP: HTTP POST Webhook: payment_intent.succeeded or charge.refunded
     MerchUCP->>MerchUCP: Update Inventory, ERP, or Order Status
     MerchUCP-->>Stripe: HTTP 200 OK (Acknowledge)
 ```
+
+
+##𝗣𝗦𝗣𝘀 𝘃𝘀 𝗣𝗜𝗦𝗣𝘀 — 𝗪𝗵𝗮𝘁’𝘀 𝘁𝗵𝗲 𝗗𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝗰𝗲?
+https://www.linkedin.com/posts/jasonheister_fintech-payments-share-7389772428681347072-2rsQ/
 
