@@ -23,16 +23,16 @@
 Before any user types a message, merchants must list their products in your chatbot.
 - **Step 1**: The merchant builds an MCP Server that exposes their product catalog and inventory.
 - **Step 2**: The merchant configures their system to adhere to UCP endpoints (Standardized APIs for creating a cart, calculating shipping/taxes, and submitting an order).
-- **Step 3**: The merchant registers their UCP-compliant endpoints with your chatbot platform.
+- **Step 3**: The merchant registers their UCP-compliant endpoints with our chatbot platform.
 - **Step 4**: The merchant connects their own PSP account (e.g., Stripe) to their system so they can eventually receive payouts.
 
 #### Phase 2: The User Experience (Frontend & AI Logic)
 This is what happens live inside our web application.
 
-- **Step 5**: Search & Browse
+- **Step 5**: <mark>**Search & Browse**</mark>
   - **User Perspective**: The user types: "I need a waterproof running jacket size M under $100."
   - **AI Chatbot Perspective**: The AI recognizes the intent, calls the connected merchant MCP servers, searches their catalogs, and displays 3 matching options directly in the chat UI.
-- **Step 6**: Cart Creation
+- **Step 6**: <mark>**Cart Creation**</mark>
     - **User Perspective**: The user clicks "Add to cart" or tells the bot "Let's buy the blue one."
     - **AI Chatbot Perspective**: The AI uses the merchant's UCP endpoints to initiate a checkout session. The merchant's backend responds with the exact total, item details, and available shipping methods.
 
