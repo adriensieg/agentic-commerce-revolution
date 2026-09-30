@@ -1,15 +1,15 @@
 
 
 ```mermaid
-sequence diagram
+sequenceDiagram
     autonumber
-    actor User as User (Web Browser)
-    participant BotUI as Your Chatbot UI / Frontend
-    participant Gemini as Gemini AI Orchestrator
-    participant MerchMCP as Merchant MCP Server
-    participant MerchUCP as Merchant UCP Backend
-    participant GPay as Google Pay API
-    participant Stripe as PSP (Stripe)
+    actor User as "User (Web Browser)"
+    participant BotUI as "Your Chatbot UI / Frontend"
+    participant Gemini as "Gemini AI Orchestrator"
+    participant MerchMCP as "Merchant MCP Server"
+    participant MerchUCP as "Merchant UCP Backend"
+    participant GPay as "Google Pay API"
+    participant Stripe as "PSP (Stripe)"
 
     %% PHASE 1: MERCHANDISER ONBOARDING
     Note over MerchMCP, Stripe: Phase 1: Merchant Onboarding (Prep Work)
