@@ -19,14 +19,14 @@
 
 ### The Step-by-Step Flow
 
-##### Phase 1: Merchant Onboarding (Behind the Scenes)
+#### Phase 1: Merchant Onboarding (Behind the Scenes)
 Before any user types a message, merchants must list their products in your chatbot.
 - **Step 1**: The merchant builds an MCP Server that exposes their product catalog and inventory.
 - **Step 2**: The merchant configures their system to adhere to UCP endpoints (Standardized APIs for creating a cart, calculating shipping/taxes, and submitting an order).
 - **Step 3**: The merchant registers their UCP-compliant endpoints with your chatbot platform.
 - **Step 4**: The merchant connects their own PSP account (e.g., Stripe) to their system so they can eventually receive payouts.
 
-##### Phase 2: The User Experience (Frontend & AI Logic)
+#### Phase 2: The User Experience (Frontend & AI Logic)
 This is what happens live inside our web application.
 
 - **Step 5**: Search & Browse
