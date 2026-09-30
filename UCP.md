@@ -165,4 +165,18 @@ sequenceDiagram
 - <mark>**Gateway Token (The Blob)**</mark>: A single-use, highly encrypted package containing the DPAN, wrapped by Google using Stripe's public key so that only Stripe can read it.
 - <mark>**Asymmetric Encryption**</mark>: The mathematical concept (Public/Private key pairs) that ensures sensitive data can pass through unsafe intermediaries (our chatbot, the UCP backend) without being compromised.
 
+### Webhook Exists: Between Stripe and the Merchant UCP Backend
+
+```mermaid
+sequence diagram
+    autonumber
+    participant MerchUCP as Merchant UCP Backend
+    participant Stripe as PSP (Stripe)
+
+    Note over MerchUCP, Stripe: Asynchronous Event Notification via Webhook
+    Stripe->>Stripe: Finalizes settlement or processes a dispute/refund
+    Stripe->>MerchUCP: HTTP POST Webhook: payment_intent.succeeded / charge.refunded
+    MerchUCP->>MerchUCP: Update Inventory, ERP, or Order Status
+    MerchUCP-->>Stripe: HTTP 200 OK (Acknowledge)
+```
 
